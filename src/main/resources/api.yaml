@@ -1,0 +1,47 @@
+openapi: 3.0.3
+info:
+  title: Title
+  description: Title
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /todo/{id}:
+    get:
+      tags:
+        - UserTodo
+      summary: Get todo by id
+      operationId: getTodo
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: todo ID
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Get todo successfully successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TodoResponseObject'
+
+components:
+  schemas:
+    TodoResponseObject:
+      type: object
+      properties:
+        todoId:
+          type: integer
+        createAt:
+          type: string
+        updateAt:
+          type: string
+        userId:
+          type: integer
+        value:
+          type: string
+        status:
+          type: string
+  
