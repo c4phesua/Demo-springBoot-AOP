@@ -1,7 +1,6 @@
 package com.example.demoaop.logger;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -15,8 +14,8 @@ public class TodoServiceAfterReturnAspect {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Before("execution(* com.example.demoaop.service.TodosServiceImpl.*(..))")
-    public void beforeReturn(JoinPoint returnValue) throws Throwable {
-        logger.info("Parameter input was {}",  returnValue.getArgs());
+    public void beforeReturn(JoinPoint inputValue) {
+        logger.info("Parameter input was {}",  inputValue.getArgs());
     }
 
     @AfterReturning(value = "execution(* com.example.demoaop.service.TodosServiceImpl.*(..))",
