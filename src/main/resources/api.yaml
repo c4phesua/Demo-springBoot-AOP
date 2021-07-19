@@ -9,7 +9,7 @@ paths:
   /todo/{id}:
     get:
       tags:
-        - UserTodo
+        - Todo
       summary: Get todo by id
       operationId: getTodo
       parameters:
@@ -26,10 +26,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TodoResponseObject'
+  /todo:
+    post:
+      tags:
+        - Todo
+      summary: create todo list
+      operationId: createTodo
+      requestBody:
+        description: todo list request object
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/SignupRequestModel'
+      responses:
+        '200':
+          description: Get todo successfully successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TodoResponseObject'
 
 components:
   schemas:
     TodoResponseObject:
+      type: object
+      properties:
+        todoId:
+          type: integer
+        createAt:
+          type: string
+        updateAt:
+          type: string
+        userId:
+          type: integer
+        value:
+          type: string
+        status:
+          type: string
+    TodoRequestObject:
       type: object
       properties:
         todoId:
