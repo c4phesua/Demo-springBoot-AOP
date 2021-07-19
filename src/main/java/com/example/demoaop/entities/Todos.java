@@ -1,4 +1,4 @@
-package com.example.demoaop.entity;
+package com.example.demoaop.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

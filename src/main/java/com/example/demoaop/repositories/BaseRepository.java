@@ -1,6 +1,6 @@
-package com.example.demoaop.repository;
+package com.example.demoaop.repositories;
 
-import com.example.demoaop.entity.BaseEntity;
+import com.example.demoaop.entities.BaseEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;

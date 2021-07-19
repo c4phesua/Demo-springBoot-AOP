@@ -1,4 +1,4 @@
-package com.example.demoaop.logger;
+package com.example.demoaop.loggers;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -13,12 +13,12 @@ import org.springframework.stereotype.Component;
 public class TodoServiceAfterReturnAspect {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Before("execution(* com.example.demoaop.service.TodosServiceImpl.*(..))")
+    @Before("execution(* com.example.demoaop.services.TodosServiceImpl.*(..))")
     public void beforeReturn(JoinPoint inputValue) {
         logger.info("Parameter input was {}",  inputValue.getArgs());
     }
 
-    @AfterReturning(value = "execution(* com.example.demoaop.service.TodosServiceImpl.*(..))",
+    @AfterReturning(value = "execution(* com.example.demoaop.services.TodosServiceImpl.*(..))",
             returning = "result")
     public void afterReturning(JoinPoint joinPoint, Object result) {
         logger.info("{} returned with value {}", joinPoint, result);

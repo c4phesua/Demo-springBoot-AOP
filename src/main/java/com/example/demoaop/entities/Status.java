@@ -1,4 +1,4 @@
-package com.example.demoaop.entity;
+package com.example.demoaop.entities;
 
 public enum Status {
     open,

@@ -1,4 +1,4 @@
-package com.example.demoaop.entity;
+package com.example.demoaop.entities;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

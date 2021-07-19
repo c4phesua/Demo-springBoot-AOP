@@ -1,8 +1,7 @@
-package com.example.demoaop.mapper;
+package com.example.demoaop.mappers;
 
 import com.example.demoaop.api.model.TodoResponseObject;
-import com.example.demoaop.entity.Todos;
-import com.example.demoaop.service.TodosService;
+import com.example.demoaop.entities.Todos;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
