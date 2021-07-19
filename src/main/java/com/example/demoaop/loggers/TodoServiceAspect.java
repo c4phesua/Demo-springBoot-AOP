@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class TodoServiceAfterReturnAspect {
+public class TodoServiceAspect {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Before("execution(* com.example.demoaop.services.TodosServiceImpl.*(..))")
