@@ -37,10 +37,10 @@ paths:
         content:
           'application/json':
             schema:
-              $ref: '#/components/schemas/SignupRequestModel'
+              $ref: '#/components/schemas/TodoRequestObject'
       responses:
         '200':
-          description: Get todo successfully successfully
+          description: create todo successfully successfully
           content:
             application/json:
               schema:
@@ -66,12 +66,6 @@ components:
     TodoRequestObject:
       type: object
       properties:
-        todoId:
-          type: integer
-        createAt:
-          type: string
-        updateAt:
-          type: string
         userId:
           type: integer
         value:
