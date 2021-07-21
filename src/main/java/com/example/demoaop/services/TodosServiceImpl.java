@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.time.Instant;
 
 @Service
-public class TodosServiceImpl implements TodosService {
+public class TodosServiceImpl implements TodosService{
     private final TodosRepository todosRepository;
 
     private final TodoMapper todoMapper;
@@ -26,6 +26,7 @@ public class TodosServiceImpl implements TodosService {
     }
 
     @Override
+    @HandleException
     public TodoResponseObject createTodo(Integer userId, String value, String status) {
         Todos todo = Todos.builder().userId(userId)
                 .status(status).value(value)
